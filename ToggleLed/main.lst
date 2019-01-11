@@ -1,0 +1,115 @@
+CCS PCM C Compiler, Version 5.070, 56587               26-sep.-17 12:38
+
+               Filename:   C:\uControl\PIC16F886\ToggleLed\main.lst
+
+               ROM used:   66 words (1%)
+                           Largest free fragment is 2048
+               RAM used:   6 (2%) at main() level
+                           6 (2%) worst case
+               Stack used: 0 locations
+               Stack size: 8
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   01A
+0003:  NOP
+.................... #include <16F886.h>                           // Preprocessor directive that selects the chip 
+.................... //////////// Standard Header file for the PIC16F886 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F886 
+....................  
+.................... #list 
+....................  
+....................  
+.................... #fuses INTRC,NOWDT,NOPROTECT,NOLVP                // Preprocessor directive that defines the chip fuses  
+.................... #use delay(clock=8MHZ)                     // Preprocessor directive that specifies clock speed 
+0004:  MOVLW  21
+0005:  MOVWF  04
+0006:  BCF    03.7
+0007:  MOVF   00,W
+0008:  BTFSC  03.2
+0009:  GOTO   017
+000A:  MOVLW  02
+000B:  MOVWF  78
+000C:  CLRF   77
+000D:  DECFSZ 77,F
+000E:  GOTO   00D
+000F:  DECFSZ 78,F
+0010:  GOTO   00C
+0011:  MOVLW  97
+0012:  MOVWF  77
+0013:  DECFSZ 77,F
+0014:  GOTO   013
+0015:  DECFSZ 00,F
+0016:  GOTO   00A
+0017:  BCF    0A.3
+0018:  BCF    0A.4
+0019:  GOTO   03A (RETURN)
+....................  
+.................... #define BTN PIN_B0 
+.................... #define LED PIN_B7 
+....................  
+.................... void main() {  
+001A:  MOVF   03,W
+001B:  ANDLW  1F
+001C:  MOVWF  03
+001D:  MOVLW  71
+001E:  BSF    03.5
+001F:  MOVWF  0F
+0020:  CLRF   10
+0021:  MOVF   0F,W
+0022:  BSF    03.6
+0023:  MOVF   09,W
+0024:  ANDLW  C0
+0025:  MOVWF  09
+0026:  BCF    03.6
+0027:  BCF    1F.4
+0028:  BCF    1F.5
+0029:  MOVLW  00
+002A:  BSF    03.6
+002B:  MOVWF  08
+002C:  BCF    03.5
+002D:  CLRF   07
+002E:  CLRF   08
+002F:  CLRF   09
+0030:  BCF    03.7
+....................  
+.................... 	do{ 
+.................... 		if(input(BTN)==1){ 
+0031:  BSF    03.5
+0032:  BCF    03.6
+0033:  BSF    06.0
+0034:  BCF    03.5
+0035:  BTFSS  06.0
+0036:  GOTO   03F
+.................... 		delay_ms(250); 
+0037:  MOVLW  FA
+0038:  MOVWF  21
+0039:  GOTO   004
+.................... 		output_toggle(LED); 
+003A:  BSF    03.5
+003B:  BCF    06.7
+003C:  MOVLW  80
+003D:  BCF    03.5
+003E:  XORWF  06,F
+.................... 	 	}	 
+.................... 	}while(true); 
+003F:  BSF    03.6
+0040:  GOTO   031
+.................... } 
+....................  
+0041:  SLEEP
+....................   
+
+Configuration Fuses:
+   Word  1: 2FE5   INTRC NOWDT PUT MCLR NOPROTECT NOCPD BROWNOUT IESO FCMEN NOLVP NODEBUG
+   Word  2: 3FFF   BORV40 NOWRT

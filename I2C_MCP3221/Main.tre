@@ -1,0 +1,26 @@
+ÀÄMain
+   ÀÄmain  0/265  Ram=1
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄ@PSTRINGC7_9600_62_63  0/88  Ram=4
+      ÃÄ@PSTRINGC7_9600_62_63  0/88  Ram=4
+      ÃÄ@delay_ms1  0/23  Ram=1
+      ÃÄ@I2C_WRITEU_1  0/18  Ram=1
+      ÃÄ@I2C_READU_1  0/16  Ram=1
+      ÃÄ@I2C_READU_1  0/16  Ram=1
+      ÃÄ@PSTRINGCN7_9600_62_63  0/89  Ram=5
+      ÃÄ@PRINTF_LU_9600_62_63  0/91  Ram=9
+      ÃÄ@ITOF  0/29  Ram=2
+      ÃÄ@MULFF  0/117  Ram=13
+      ÃÄ@PSTRINGCN7_9600_62_63  0/89  Ram=5
+      ÃÄ@PRINTF_L32D_9600_62_63FPFPF  0/228  Ram=13
+      ³  ÃÄ@MULFF  0/117  Ram=13
+      ³  ÃÄ@FTOSD  (Inline)  Ram=5
+      ³  ÃÄ@DIV3232  0/79  Ram=13
+      ³  ÀÄ@DIV3232  0/79  Ram=13
+      ÃÄ@PSTRINGCN7_9600_62_63  0/89  Ram=5
+      ÃÄ@ITOF  0/29  Ram=2
+      ÃÄ@MULFF  0/117  Ram=13
+      ÃÄ@PSTRINGCN7_9600_62_63  0/89  Ram=5
+      ÃÄ@PRINTF_L32D_9600_62_63FPFPF  0/228  Ram=13
+      ³  ÀÄ*
+      ÀÄ@PSTRINGCN7_9600_62_63  0/89  Ram=5
